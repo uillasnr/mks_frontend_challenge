@@ -15,8 +15,6 @@ export const TagHeader = styled.header`
   }
 
   @media (max-width: 480px) {
-    flex-direction: column;
-    height: auto;
     padding: 10px 1rem;
   }
 `;
@@ -58,6 +56,7 @@ export const Logo = styled.div`
 `;
 
 export const Card = styled.div`
+  cursor: pointer;
   border-radius: 0.5rem;
   height: 2.8rem;
   width: 5.6rem;

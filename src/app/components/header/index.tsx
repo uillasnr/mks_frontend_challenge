@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { TagHeader, Logo, Card } from "./style";
 import { useContext, useState } from "react";
-import Sidebar from "../sidebar";
 import { motion } from "framer-motion";
 import { CartContext } from "@/app/context/cart";
+import Sidebar from "../Sidebar";
 
 export const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -13,6 +13,8 @@ export const Header = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const openModal = () => {};
 
   return (
     <TagHeader>
@@ -37,7 +39,12 @@ export const Header = () => {
           <span>{products.length > 0 ? products.length : 0}</span>
         </Card>
       </motion.div>
-      <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={toggleSidebar}
+        onOpenModal={openModal}
+      />
     </TagHeader>
   );
 };

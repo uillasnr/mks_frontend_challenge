@@ -12,7 +12,6 @@ interface CartContextType {
   clearCart: () => void;
 }
 
-
 export const CartContext = createContext<CartContextType>({
   products: [],
   totalPrice: 0,
@@ -25,35 +24,37 @@ export const CartContext = createContext<CartContextType>({
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
 
-  const [products, setProducts] = useState<Product[]>(() => {
+  const [products, setProducts] = useState<Product[]>([]);
+//Erro next.js
+/*   const [products, setProducts] = useState<Product[]>(() => {
     const storagedCart = localStorage.getItem("MKS_frontend");
     return storagedCart ? JSON.parse(storagedCart) : [];
-  });
+  }); */
 
 
   const totalPrice = products.reduce((total, product) => {
     return total + product.price * product.quantity;
   }, 0);
 
-
+  
   useEffect(() => {
     localStorage.setItem("MKS_frontend", JSON.stringify(products));
   }, [products]);
 
   const addProductToCart = (product: Product, emptyCart?: boolean) => {
     if (emptyCart) {
-
+     
       setProducts([product]);
       return;
     }
 
-
+  
     const isProductAlreadyOnCart = products.some(
       (cartProduct) => cartProduct.id === product.id
     );
 
     if (isProductAlreadyOnCart) {
-
+  
       setProducts((prev) =>
         prev.map((cartProduct) =>
           cartProduct.id === product.id
@@ -65,7 +66,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         )
       );
     } else {
-
+   
       setProducts((prev) => [...prev, product]);
     }
   };
@@ -90,7 +91,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-
+ 
   const removeProductFromCart = (productId: number) => {
     setProducts((prev) => {
       const updatedProducts = prev.filter(
@@ -101,10 +102,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-
-  const clearCart = () => { 
+ 
+  const clearCart = () => {
     setProducts([]); 
-    localStorage.removeItem("MKS_frontend"); 
+    localStorage.removeItem("MKS_frontend");
   };
 
   return (

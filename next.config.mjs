@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compiler: {
+    styledComponents: true,
+  },
   images: {
-    domains: ['mks-sistemas.nyc3.digitaloceanspaces.com'],
+    domains: ["mks-sistemas.nyc3.digitaloceanspaces.com"],
   },
 };
 

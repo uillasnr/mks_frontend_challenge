@@ -1,7 +1,8 @@
 "use client";
-import Image from "next/image";
-import { TagHeader, Logo, Card } from "./style";
+
+import { TagHeader, Logo, Card } from "./styles";
 import { useContext, useState } from "react";
+import { TiShoppingCart } from "react-icons/ti";
 import { motion } from "framer-motion";
 import { CartContext } from "@/app/context/cart";
 import Sidebar from "../Sidebar";
@@ -35,11 +36,10 @@ export const Header = () => {
         transition={{ type: "tween", duration: 0.5 }}
       >
         <Card onClick={toggleSidebar}>
-          <Image src="/vector.png" alt="Carrinho" width={19} height={18} />
+          <TiShoppingCart size={21} />
           <span>{products.length > 0 ? products.length : 0}</span>
         </Card>
       </motion.div>
-
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={toggleSidebar}

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { CartContext } from "@/app/context/cart";
 import {
@@ -9,6 +9,7 @@ import {
   CardPoduct,
   ButtonQuantity,
   TotalValueContainer,
+  Button,
 } from "./styles";
 import Image from "next/image";
 import { formatCurrency } from "@/app/utils/price";
@@ -28,34 +29,12 @@ const Sidebar = ({ isOpen, onClose, onOpenModal }: SidebarProps) => {
     totalPrice,
     clearCart,
   } = useContext(CartContext);
-  const sidebarRef = useRef<HTMLDivElement>(null);
 
   const handleCheckout = () => {
     onClose();
     onOpenModal();
-    clearCart;
+    clearCart();
   };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node)
-      ) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen, onClose]);
 
   return (
     <StyledSidebarContainer style={{ display: isOpen ? "block" : "none" }}>
@@ -64,7 +43,7 @@ const Sidebar = ({ isOpen, onClose, onOpenModal }: SidebarProps) => {
         animate={{ x: isOpen ? 0 : "100%" }}
         transition={{ type: "tween", duration: 0.5 }}
       >
-        <SidebarContent ref={sidebarRef}>
+        <SidebarContent>
           <SidebarHeader>
             <h1>Carrinho de compras</h1>
             <button onClick={onClose}>×</button>
@@ -115,6 +94,7 @@ const Sidebar = ({ isOpen, onClose, onOpenModal }: SidebarProps) => {
               </>
             )}
           </Content>
+
           {products.length > 0 && (
             <TotalValueContainer>
               <div>
@@ -124,10 +104,9 @@ const Sidebar = ({ isOpen, onClose, onOpenModal }: SidebarProps) => {
             </TotalValueContainer>
           )}
         </SidebarContent>
+
         {products.length > 0 && (
-          <button onClick={handleCheckout} className="finalizar-compra-button">
-            Finalizar Compra
-          </button>
+          <Button onClick={handleCheckout}>Finalizar Compra</Button>
         )}
       </motion.div>
     </StyledSidebarContainer>

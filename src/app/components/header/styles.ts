@@ -1,4 +1,4 @@
-import { colors } from "@/styles/colors";
+import { colors } from "@/app/styles/colors";
 import styled from "styled-components";
 
 export const TagHeader = styled.header`

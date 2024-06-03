@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "@/styles/colors";
+import { colors } from "@/app/styles/colors";
 import { motion } from "framer-motion";
 
 export const ProductCardContainer = styled(motion.div)`

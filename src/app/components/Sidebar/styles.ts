@@ -14,9 +14,6 @@ export const StyledSidebarContainer = styled.div`
   transition: transform 0.3s ease-in-out;
   min-height: 100vh;
 
-  
-  
-
   @media (max-width: 30rem) {
     width: 100%;
   }
@@ -197,27 +194,25 @@ export const CardPoduct = styled.div`
   }
 `;
 export const Button = styled.div`
+  background-color: ${colors.black};
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  height: 7.063rem;
+  color: ${colors.primary};
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 0.938rem;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    background-color: ${colors.black};
-    border: none;
-    width: 100%;
-    cursor: pointer;
-    height: 7.063rem;
-    color: ${colors.primary};
-    font-weight: 700;
-    font-size: 1.75rem;
-    line-height: 0.938rem;
-    transition: opacity 0.3s ease;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      opacity: 0.75;
-    }
-  
-`
+  &:hover {
+    opacity: 0.75;
+  }
+`;
 export const ButtonQuantity = styled.div`
   display: flex;
   flex-direction: column;

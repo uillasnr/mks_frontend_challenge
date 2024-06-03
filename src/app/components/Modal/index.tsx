@@ -7,7 +7,7 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose }: ModalProps) => {
-  if (!isOpen) return null;
+  if (!isOpen) return ;
 
   return (
     <ModalContainer onClick={onClose}>

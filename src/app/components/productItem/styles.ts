@@ -25,6 +25,10 @@ export const ProductCardContainer = styled(motion.div)`
   &:hover {
     transform: scale(1.02);
   }
+
+  @media (max-width: 576px) {
+    width: 17rem;
+  }
 `;
 
 export const Button = styled.button`

@@ -7,15 +7,17 @@ import { motion } from "framer-motion";
 import { CartContext } from "@/app/context/cart";
 import Sidebar from "../Sidebar";
 
-export const Header = () => {
+interface HeaderProps {
+  onOpenModal: () => void;
+}
+
+export const Header = ({ onOpenModal }: HeaderProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { products } = useContext(CartContext);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
-  const openModal = () => {};
 
   return (
     <TagHeader>
@@ -43,7 +45,7 @@ export const Header = () => {
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={toggleSidebar}
-        onOpenModal={openModal}
+        onOpenModal={onOpenModal}
       />
     </TagHeader>
   );

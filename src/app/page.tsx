@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
+      <Header onOpenModal={handleOpenModal} />
       <ProductList />
       <Sidebar
         isOpen={isOpen}

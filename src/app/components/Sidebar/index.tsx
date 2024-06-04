@@ -32,8 +32,8 @@ const Sidebar = ({ isOpen, onClose, onOpenModal }: SidebarProps) => {
 
   const handleCheckout = () => {
     onClose();
-    onOpenModal();
     clearCart();
+    onOpenModal();
   };
 
   return (

@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Frontend MKS
 
-## Getting Started
+Este projeto foi desenvolvido como parte do desafio Frontend MKS. O objetivo é criar uma aplicação web que consuma uma API REST de produtos para exibir uma lista de produtos de uma loja. A aplicação possui uma única página/rota, exibindo os produtos disponíveis e um carrinho onde os produtos selecionados são exibidos, com a opção de aumentar a quantidade de cada produto.
 
-First, run the development server:
+## Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/): Framework React para renderização do lado do servidor.
+- [Styled Components](https://styled-components.com/): Biblioteca para estilização de componentes com CSS-in-JS.
+- [React Query](https://react-query.tanstack.com/): Biblioteca para gerenciamento de estado e dados assíncronos.
+- [Framer Motion](https://www.framer.com/motion/): Biblioteca para animações em React.
+- [TypeScript](https://www.typescriptlang.org/): Superset de JavaScript que adiciona tipagem estática ao código.
+- [Jest](https://jestjs.io/): Framework de teste para JavaScript.
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/): Biblioteca para testes de componentes React.
+
+
+## Como Executar o Projeto Localmente
+
+1. Clone este repositório:
+
+```bash
+git clone https://github.com/uillasnr/mks_frontend_challenge.git
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Execute o projeto:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto estará disponível em https://mks-frontend-challenge-drab.vercel.app/.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Este projeto foi implantado na plataforma Vercel e está disponível [aqui](https://mks-frontend-challenge-drab.vercel.app/).
 
-## Learn More
+## Sobre o Desenvolvedor
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto foi desenvolvido por [Uillas Nascimento Reis](https://github.com/uillasnr).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Observações
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- A aplicação consome a API REST de produtos fornecida no desafio.
+- Foi adicionada responsividade para garantir uma boa experiência em diferentes dispositivos.
+- A funcionalidade de exclusão de produtos foi implementada no carrinho de compras.
+- Para mais detalhes sobre a implementação e a estrutura do projeto, consulte o código-fonte.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useProductData } from "@/app/hooks/useProductsData";
 import { ProductItem } from "../productItem";
-import { ProductListContainer } from "./styles";
+import { ProductListContainer, EmptyMessage } from "./styles";
 import SkeletonProduct from "./SkeletonProduct";
 
 const ProductList = () => {
@@ -27,6 +27,15 @@ const ProductList = () => {
       </ProductListContainer>
     );
   }
+
+  if (!data?.products?.length) {
+    return (
+      <ProductListContainer>
+        <EmptyMessage>Nenhum produto encontrado.</EmptyMessage>
+      </ProductListContainer>
+    );
+  }
+
 
   return (
     <ProductListContainer>

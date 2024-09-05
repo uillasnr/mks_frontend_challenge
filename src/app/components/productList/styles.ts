@@ -6,7 +6,7 @@ export const ProductListContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 5rem 10rem;
+  padding: 5rem 5rem;
   background-color: ${colors.bg};
 
   @media (max-width: 1030px) {
@@ -19,4 +19,15 @@ export const ProductListContainer = styled.div`
   @media (max-width: 576px) {
     padding: 5rem 1rem;
   }
+`;
+
+export const EmptyMessage = styled.div`
+  font-size: 1.2rem;
+  color: ${colors.MediumGray};
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 `;

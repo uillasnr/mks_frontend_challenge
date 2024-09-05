@@ -4,7 +4,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["mks-sistemas.nyc3.digitaloceanspaces.com"],
+    domains: ["storage.googleapis.com"],
   },
 };
 

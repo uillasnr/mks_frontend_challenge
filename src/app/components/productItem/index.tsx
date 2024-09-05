@@ -21,15 +21,15 @@ export function ProductItem({ product }: { product: Product }) {
     >
       <ProductCardContainer>
         <Image
-          src={product.photo}
-          alt={product.name}
+          src={product.image}
+          alt={product.title}
           width={121.64}
           height={138}
           className="ImageProduct"
         />
         <ProductDetails>
           <div>
-            <h1>{product.name}</h1>
+            <h1>{product.title}</h1>
             <h2>{formatCurrency(product.price)}</h2>
           </div>
           {/*   <p>{product.brand}</p> */}

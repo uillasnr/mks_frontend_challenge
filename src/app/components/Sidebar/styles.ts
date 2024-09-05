@@ -168,6 +168,12 @@ export const CardPoduct = styled.div`
     line-height: 1rem;
     color: ${colors.MediumGray};
     margin-left: 0.625rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .delete-button {

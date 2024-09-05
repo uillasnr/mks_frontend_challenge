@@ -63,14 +63,14 @@ const Sidebar = ({ isOpen, onClose, onOpenModal }: SidebarProps) => {
                       X
                     </button>
                     <Image
-                      src={product.photo}
-                      alt={product.name}
+                      src={product.image}
+                      alt={product.title}
                       width={60}
                       height={60}
                       layout="intrinsic"
                     />
 
-                    <p>{product.name}</p>
+                    <p>{product.title}</p>
 
                     <ButtonQuantity>
                       <h3>Qtd:</h3>

@@ -71,6 +71,12 @@ export const ProductDetails = styled.div`
     line-height: 1.188rem;
     font-weight: 400;
     color: ${colors.MediumGray};
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   h2 {
